@@ -38,13 +38,13 @@ module ieee802-dot1q-bridge {
        2) Customer VLAN Bridges
        3) Provider Bridges.
     
-    Copyright (C) IEEE (2022).
+    Copyright (C) IEEE (2023).
     
     This version of this YANG module is part of IEEE Std 802.1Q; see the
     standard itself for full legal notices.";
-  revision 2022-10-31 {
+  revision 2023-04-17 {
     description
-      "Published as part of IEEE Std 802.1Qcw.
+      "Published as part of IEEE Std 802.1Qcw-2023.
       
       The following reference statement identifies each referenced IEEE
       Standard as updated by applicable amendments.";
@@ -347,7 +347,7 @@ module ieee802-dot1q-bridge {
             "Unique EUI-48 Universally Administered MAC address assigned to
             a Bridge component.";
           reference
-            "13.24, 8.13.8 of IEEE Std 802.1Q";
+            "8.13.8 of IEEE Std 802.1Q";
         }
         leaf traffic-class-enabled {
           type boolean;
@@ -469,7 +469,7 @@ module ieee802-dot1q-bridge {
             "12.7 of IEEE Std 802.1Q";
           leaf aging-time {
             type uint32 {
-              range "10..10000000";
+              range "10..1000000";
             }
             units "seconds";
             default "300";
@@ -1156,7 +1156,6 @@ module ieee802-dot1q-bridge {
           path '/dot1q:bridges/dot1q:bridge/dot1q:name';
         }
         
-        // mandatory true; yang 1.1 only
         description
           "Used to reference configured Bridge node.";
       }
@@ -1171,7 +1170,6 @@ module ieee802-dot1q-bridge {
             '/dot1q:name';
         }
         
-        // mandatory true; yang 1.1 only
         description
           "Used to reference configured Component node.";
       }
